@@ -7,7 +7,7 @@
 
 function getAllDirectors(movies) {
   // arreglo.map(function(elementoActual, indice, arregloOriginal) {  ... código });
-  let result = movies.map((directores) => directores.director);
+  const result = movies.map((directores) => directores.director);
 
   return result;
 }
@@ -15,7 +15,7 @@ function getAllDirectors(movies) {
 // Exercise 2: Get the films of a certain director
 
 function getMoviesFromDirector(movies, director) {
-  let peliculasDirector = movies.filter((pelis) => pelis.director == director);
+  const peliculasDirector = movies.filter((pelis) => pelis.director == director);
   return peliculasDirector;
 }
 // Exercise 3: Calculate the average of the films of a given director.
@@ -26,12 +26,12 @@ function getMoviesFromDirector(movies, director) {
 // Ajuda: com vols obtenir un únic valor, el mètode .reduce() pot ser d'utilitat.
 
 function moviesAverageOfDirector(movies, director) {
-  let peliculas = movies.filter((pelis) => pelis.director == director);
+  const peliculas = movies.filter((pelis) => pelis.director == director);
   return moviesAverage(peliculas);
 }
 
 function moviesAverage(peliculas) {
-  let mediascore = peliculas.reduce((media, film) => {
+  const mediascore = peliculas.reduce((media, film) => {
       return (media += film.score.toFixed(2) / peliculas.length);
   }, 0);
   return +mediascore.toFixed(2);
@@ -97,10 +97,10 @@ function orderByYear(movies) {
 // Aquí radica la potència de les funcions, pots reutilitzar-les tantes vegades com vulguis!
 
 function moviesAverageByCategory(movies, category) {
-  let encontrados = [];
-  let resultMap = movies.map((buscarGenero) => {
-    let buscarCategoria = buscarGenero.genre;
-    let result = buscarCategoria.filter((filtrarGenero) => {
+  const encontrados = [];
+  const resultMap = movies.map((buscarGenero) => {
+    const buscarCategoria = buscarGenero.genre;
+    const result = buscarCategoria.filter((filtrarGenero) => {
       if (filtrarGenero.toLowerCase() === category.toLowerCase()) {
         console.log('encontrado');
         encontrados.push(buscarGenero);
