@@ -96,9 +96,9 @@ function orderByYear(movies) {
 // Per a facilitar-te la implementació, hauràs d'usar la funció creada en l'exercici 3. Primer has d'obtenir les pel·lícules d'una determinada categoria, i després cridar a moviesAverage(), per a calcular la seva mitjana.
 // Aquí radica la potència de les funcions, pots reutilitzar-les tantes vegades com vulguis!
 
-function moviesAverageByCategory(array, category) {
+function moviesAverageByCategory(movies, category) {
   let encontrados = [];
-  let resultMap = movies2.map((buscarGenero) => {
+  let resultMap = movies.map((buscarGenero) => {
     let buscarCategoria = buscarGenero.genre;
     let result = buscarCategoria.filter((filtrarGenero) => {
       if (filtrarGenero.toLowerCase() === category.toLowerCase()) {
